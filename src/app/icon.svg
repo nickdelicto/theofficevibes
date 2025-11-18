@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Coffee cup icon matching the Lucide Coffee icon style -->
+  <!-- Background circle for better visibility -->
+  <rect width="32" height="32" rx="6" fill="#3B82F6"/>
+  
+  <!-- Coffee cup in accent yellow/gold -->
+  <g transform="translate(6, 6)">
+    <!-- Cup body -->
+    <path d="M17 8h1a4 4 0 0 1 0 8h-1" stroke="#FCD34D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z" stroke="#FCD34D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    
+    <!-- Steam lines -->
+    <line x1="6" y1="2" x2="6" y2="5" stroke="#FCD34D" stroke-width="2" stroke-linecap="round"/>
+    <line x1="10" y1="1" x2="10" y2="4" stroke="#FCD34D" stroke-width="2" stroke-linecap="round"/>
+    <line x1="14" y1="2" x2="14" y2="5" stroke="#FCD34D" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>
+
