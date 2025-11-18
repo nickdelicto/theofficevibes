@@ -14,6 +14,12 @@ const nextConfig = {
   
   // Optimize for production
   swcMinify: true,
+  
+  // Disable webpack build worker to prevent SIGBUS errors on low-memory VPS
+  // This is a known issue with Next.js 14 on servers with limited RAM
+  experimental: {
+    webpackBuildWorker: false,
+  },
 };
 
 module.exports = nextConfig;
