@@ -15,6 +15,15 @@ const nextConfig = {
   // Optimize for production
   swcMinify: true,
   
+  // Skip type checking and linting during build to reduce memory usage
+  // Run separately with: npm run lint
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  
   // Disable webpack build worker to prevent SIGBUS errors on low-memory VPS
   // This is a known issue with Next.js 14 on servers with limited RAM
   experimental: {
