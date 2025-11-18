@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts - Optimized for performance */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap');
+
+@layer base {
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-gray-900 antialiased;
+  }
+
+  /* Optimize for mobile - prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Reusable button styles for CTAs */
+  .btn-primary {
+    @apply bg-secondary hover:bg-secondary-dark text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl active:scale-95 text-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  }
+
+  /* Section container for consistent spacing */
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20;
+  }
+
+  /* Card styling for donation options */
+  .donation-card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 p-6;
+  }
+}
+
+@layer utilities {
+  /* Custom gradient for hero section */
+  .gradient-hero {
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 50%, #1D4ED8 100%);
+  }
+
+  /* Subtle pattern overlay for sections */
+  .pattern-dots {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
