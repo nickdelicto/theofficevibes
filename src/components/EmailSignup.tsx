@@ -48,8 +48,9 @@ export default function EmailSignup() {
         setEmail('');
         
         // Track conversion
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'email_signup', {
+        const windowWithGtag = window as Window & { gtag?: (...args: unknown[]) => void };
+        if (typeof window !== 'undefined' && windowWithGtag.gtag) {
+          windowWithGtag.gtag('event', 'email_signup', {
             event_category: 'engagement',
             event_label: 'newsletter',
           });
@@ -57,7 +58,7 @@ export default function EmailSignup() {
       } else {
         throw new Error('Subscription failed');
       }
-    } catch (error) {
+    } catch {
       setStatus('error');
       setMessage('Oops! Something went wrong. Try again?');
     }

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import Image from 'next/image';
 
 /**
  * Donation Section - THE MONEY MAKER
@@ -60,8 +59,9 @@ export default function DonationSection() {
   // Track donation button clicks for analytics
   const handleDonationClick = (platform: string) => {
     // Google Analytics event tracking (will set up GA4 later)
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'donation_click', {
+    const windowWithGtag = window as Window & { gtag?: (...args: unknown[]) => void };
+    if (typeof window !== 'undefined' && windowWithGtag.gtag) {
+      windowWithGtag.gtag('event', 'donation_click', {
         platform: platform,
         event_category: 'engagement',
         event_label: platform,

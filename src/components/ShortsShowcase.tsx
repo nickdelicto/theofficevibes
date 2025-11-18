@@ -93,8 +93,9 @@ function ShortCard({ short, index }: { short: typeof shorts[0]; index: number })
           className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100"
           onClick={() => {
             // Track analytics
-            if (typeof window !== 'undefined' && (window as any).gtag) {
-              (window as any).gtag('event', 'short_click', {
+            const windowWithGtag = window as Window & { gtag?: (...args: unknown[]) => void };
+            if (typeof window !== 'undefined' && windowWithGtag.gtag) {
+              windowWithGtag.gtag('event', 'short_click', {
                 video_id: short.id,
                 event_category: 'engagement',
               });
@@ -167,8 +168,9 @@ export default function ShortsShowcase() {
             className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-primary-dark text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
             onClick={() => {
               // Track YouTube channel click
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', 'youtube_channel_click', {
+              const windowWithGtag = window as Window & { gtag?: (...args: unknown[]) => void };
+              if (typeof window !== 'undefined' && windowWithGtag.gtag) {
+                windowWithGtag.gtag('event', 'youtube_channel_click', {
                   event_category: 'engagement',
                   event_label: 'shorts_section',
                 });

@@ -89,8 +89,9 @@ export default function Footer() {
                         className={`w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:bg-gray-700 ${social.color}`}
                         onClick={() => {
                           // Track social clicks
-                          if (typeof window !== 'undefined' && (window as any).gtag) {
-                            (window as any).gtag('event', 'social_click', {
+                          const windowWithGtag = window as Window & { gtag?: (...args: unknown[]) => void };
+                          if (typeof window !== 'undefined' && windowWithGtag.gtag) {
+                            windowWithGtag.gtag('event', 'social_click', {
                               platform: social.name,
                               location: 'footer',
                             });
@@ -134,8 +135,9 @@ export default function Footer() {
                     className="text-gray-400 hover:text-accent transition-colors"
                     onClick={() => {
                       // Track clicks to sponsor page
-                      if (typeof window !== 'undefined' && (window as any).gtag) {
-                        (window as any).gtag('event', 'sponsor_page_click', {
+                      const windowWithGtag = window as Window & { gtag?: (...args: unknown[]) => void };
+                      if (typeof window !== 'undefined' && windowWithGtag.gtag) {
+                        windowWithGtag.gtag('event', 'sponsor_page_click', {
                           location: 'footer',
                         });
                       }
