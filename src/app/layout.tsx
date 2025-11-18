@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "The Office Vibes - Support Relatable Office Humor",
@@ -50,6 +51,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.youtube.com" />
       </head>
       <body className="font-sans">
+        {/* Google Analytics - only loads in production */}
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
